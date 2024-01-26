@@ -1,8 +1,6 @@
 import { useState } from "react";
 import "./App.css";
 
-import { Button } from "keep-react";
-
 function App() {
   const [count, setCount] = useState(0);
 
@@ -19,9 +17,9 @@ function App() {
           gap: "16px",
         }}
       >
-        <Button type="primary" size="xs" onClick={() => setCount((count) => count + 1)}>
+        <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
-        </Button>
+        </button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
