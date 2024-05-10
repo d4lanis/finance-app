@@ -5,5 +5,5 @@ import million from "million/compiler";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [million.vite({ auto: true }), react()],
-  base: "https://d4lanis.github.io/finance-app/"
+  //base: "https://d4lanis.github.io/"
 });
