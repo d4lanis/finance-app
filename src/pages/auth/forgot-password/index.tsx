@@ -11,8 +11,10 @@ import {
 } from "evergreen-ui";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { useNavigate } from "react-router-dom";
 
-function Login() {
+function ForgotPassword() {
+  const navigate = useNavigate();
   const {
     errors,
     touched,
@@ -24,16 +26,17 @@ function Login() {
   } = useFormik({
     initialValues: {
       email: "",
-      password: "",
     },
     validationSchema: Yup.object({
       email: Yup.string().required("This field is required").email(),
-      password: Yup.string().required("This field is required"),
     }),
     onSubmit: (values, { setSubmitting }) => {
       console.log("Form submitted:", values);
       setSubmitting(false);
-      toaster.success("Login succcesful");
+      toaster.success("Check your email for password recovery instructions");
+      setTimeout(() => {
+        navigate("/reset-password");
+      }, 3000);
     },
     validateOnMount: true,
   });
@@ -52,7 +55,7 @@ function Login() {
       <Pane width={475} margin="auto" padding={40} backgroundColor="#fff">
         <form onSubmit={handleSubmit}>
           <Heading size={900} paddingBottom={24}>
-            Login
+            Forgot Password?
           </Heading>
 
           <FormField label="Email Address" labelFor="email">
@@ -71,34 +74,9 @@ function Login() {
               onChange={handleChange}
               isInvalid={Boolean(touched.email && errors.email)}
             />
-          </FormField>
-
-          {touched.email && errors.email && (
-            <InlineAlert marginTop={-16} marginBottom={16} intent="danger">
-              {errors.email}
-            </InlineAlert>
-          )}
-
-          <FormField label="Password">
-            <TextInput
-              id="password"
-              type="password"
-              width="100%"
-              height={40}
-              marginBottom={24}
-              padding={10}
-              border="1px solid #ccc"
-              borderRadius={5}
-              fontSize={16}
-              placeholder="Enter your password"
-              value={values.password}
-              onBlur={handleBlur}
-              onChange={handleChange}
-              isInvalid={Boolean(touched.password && errors.password)}
-            />
-            {touched.password && errors.password && (
+            {touched.email && errors.email && (
               <InlineAlert marginTop={-16} marginBottom={16} intent="danger">
-                {errors.password}
+                {errors.email}
               </InlineAlert>
             )}
           </FormField>
@@ -111,15 +89,12 @@ function Login() {
             type="submit"
             disabled={!isValid}
           >
-            Login
+            Send
           </Button>
         </form>
-        <Pane display="flex" flexDirection="column" alignItems="center" justifyContent="center" paddingTop={16} rowGap={8}>
+        <Pane display="flex" justifyContent="center" paddingTop={16}>
           <Text>
-            <Link href="/forgot-password">Forgot Password?</Link>
-          </Text>
-          <Text>
-            Don't have an account? <Link href="/register">Register</Link>
+            Go back to <Link href="auth/login">Login</Link>
           </Text>
         </Pane>
       </Pane>
@@ -127,4 +102,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default ForgotPassword;
