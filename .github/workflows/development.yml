@@ -38,7 +38,7 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-asume: arn:aws:iam::925173698100:role/S3-FullAccess
+          role-to-assume: arn:aws:iam::925173698100:role/S3-FullAccess
           aws-region: us-east-1
 
       - name: Deploy to S3
