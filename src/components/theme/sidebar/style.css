@@ -1,0 +1,10 @@
+.sidebar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+    background: "#ffffff";
+    border: 1px dotted green;
+    text-align: center;
+}
