@@ -40,5 +40,4 @@ jobs:
 
       - name: Deploy to S3
         run: |
-          aws s3 sync dist/ s3://website-finance-app --delete --aws-access-key ${{ secrets.AWS_ACCESS_KEY_ID }} 
---aws-secret-key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws s3 sync dist/ s3://website-finance-app --delete --aws-access-key ${{ secrets.AWS_ACCESS_KEY_ID }} --aws-secret-key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
