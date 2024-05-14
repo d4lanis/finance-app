@@ -35,7 +35,7 @@ function ForgotPassword() {
       setSubmitting(false);
       toaster.success("Check your email for password recovery instructions");
       setTimeout(() => {
-        navigate("/reset-password");
+        navigate("/auth/reset-password");
       }, 3000);
     },
     validateOnMount: true,
@@ -94,7 +94,7 @@ function ForgotPassword() {
         </form>
         <Pane display="flex" justifyContent="center" paddingTop={16}>
           <Text>
-            Go back to <Link href="auth/login">Login</Link>
+            Go back to <Link href="/auth/login">Login</Link>
           </Text>
         </Pane>
       </Pane>

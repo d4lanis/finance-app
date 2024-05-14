@@ -36,7 +36,7 @@ import {
         setSubmitting(false);
         toaster.success("Password Reseted!");
         setTimeout(() => {
-            navigate('/login');
+            navigate('/auth/login');
         }, 3000)
       },
       validateOnMount: true,

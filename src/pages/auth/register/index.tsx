@@ -244,7 +244,7 @@ function Register() {
           </Button>
           <Pane display="flex" justifyContent="center" paddingTop={16}>
             <Text>
-              Already have an account? <Link href="auth/login">Login</Link>
+              Already have an account? <Link href="/auth/login">Login</Link>
             </Text>
           </Pane>
         </form>

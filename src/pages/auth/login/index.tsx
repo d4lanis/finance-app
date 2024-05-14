@@ -116,10 +116,10 @@ function Login() {
         </form>
         <Pane display="flex" flexDirection="column" alignItems="center" justifyContent="center" paddingTop={16} rowGap={8}>
           <Text>
-            <Link href="auth/forgot-password">Forgot Password?</Link>
+            <Link href="/auth/forgot-password">Forgot Password?</Link>
           </Text>
           <Text>
-            Don't have an account? <Link href="auth/register">Register</Link>
+            Don't have an account? <Link href="/auth/register">Register</Link>
           </Text>
         </Pane>
       </Pane>
