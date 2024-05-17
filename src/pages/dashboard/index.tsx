@@ -1,5 +1,5 @@
 //import { Heading, Link, Pane, Text } from "evergreen-ui";
-import Sidebar from "../../components/theme/sidebar";
+import Sidebar from "../../components/sidebar";
 
 function Dashboard() {
   return (
